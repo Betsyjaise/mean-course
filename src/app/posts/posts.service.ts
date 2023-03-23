@@ -1,16 +1,18 @@
 import { Injectable } from '@angular/core';
+// import { Subject } from 'rxjs';
+
 import { Post } from './post.model';
 
-@Injectable({providedIn:'root'})
+@Injectable({ providedIn: 'root' })
 export class PostsService {
-  private posts: Post[] =[];
+  private posts: Post[] = [];
 
-  getPosts(){
-    return [...this.posts];
+  getPosts(): Post[] {
+    return this.posts;
   }
 
-  addPost(title:string,content:string){
-    const post: Post ={title:title,content:content};
+  addPost(title: string, content: string) {
+    const post: Post = { title: title, content: content };
     this.posts.push(post);
   }
 }
